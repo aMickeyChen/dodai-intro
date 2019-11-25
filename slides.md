@@ -1,9 +1,9 @@
 footer: Mickey Chen @ Access Taiwan
 slidenumbers: true
 build-lists: true
+theme: Simple, 5
 
 # Diving in to 土台 (Dodai)
-<sub>From a rookie's POV</sub>
 
 ---
 
@@ -12,7 +12,9 @@ build-lists: true
 
 ![fit inline](images/imnew.gif)
 
-^ haven't worked with Dodai
+^
+haven't worked with Dodai
+worked with dynamic types languages
 
 ---
 
@@ -25,13 +27,13 @@ build-lists: true
 ## What we are going to talk about
 
 - Philosophy
-- Running Dodai
 - Development
 
 ---
 
 # Philosophy
-<sub>My Hypothosis 🤞</sub>
+
+### My Hypothosis 🤞
 
 ---
 
@@ -81,6 +83,11 @@ build-lists: true
 
 [^source]: [Data flow during HTTP request processing in Dodai API server](https://github.com/access-company/Dodai/blob/master/internal-doc/design/data_flow.md)
 
+^
+Play Framework -> no ORM
+Repo -> Actions on Collections
+Model -> Describes the Entities, encode & decode
+
 ---
 
 [.slide-transition: false]
@@ -128,14 +135,128 @@ ScheduledHttpNotificationWorker
 ---
 
 ## Access Control
-### Section-based Authorization
+
+- Section-based Authorization
+
+![fit inline](images/AccessControl_1.png)
+
+![right fit](images/AccessControl_2.png)
 
 ---
 
-## APIs & Client Library
+![fit inline](images/SectionDetails.png)
+
+---
+
+> _Paste Code Here_
+
+^
+couldn't add new section locally
+ask for input from more experience team member for input
+
+---
+
+## APIs & Client Libraries
+
+---
+
+### APIs
+
+- 2 Sets
+  - Admin (`/admin`)
+  - Application (`/v1`)
+- `:appId` + `:groupId`
+- `/webhook`
+
+^ per App credentials
+
+---
+
+### Client Libraries
+
+- DodaiClientElixir
+- antikythera_acs
+- dodai_console
+- sazabi
+
+---
+
+#### they are...
+
+- Script Generated
+- `apidata.json`
+- Please refer to *[Update the Api document](https://github.com/access-company/Dodai/blob/master/internal-doc/development/update_api_document.md)*
+
+---
+
+# Development
+
+---
+
+![fit inline](images/ServerArchitecture.png)
+
+^
+suprise! - Stripe
+
+---
+
+## First you will need Mongo
+
+- 3.0.X
+- Docker is probably the easiest
+
+^ brew only has 3.2.X
+
+---
+
+## Then you will need Scala env
+
+- Java Runtime ([AWS Corretto 8](https://docs.aws.amazon.com/corretto/latest/corretto-8-ug/macos-install.html))
+- 2.13.0
+- install sbt (1.2.8)
+- sbt build
+- [Play! framework](https://www.playframework.com/)
+
+^
+I just use the latest asdf java runtime
+Play - java & scala webframework in Akka
+
+---
+
+### ... if you don't speak Scala
+
+> ##*[Scala School](https://twitter.github.io/scala_school/index.html)* 愛你
+
+^
+by twitter
+few chapters get you a long way
+
+---
+
+## oh yeah... you probably also need Ruby env
+
+- 2.4.4
+- `gem install bundler`
+- Scripts
+- `cd scripts && bundle`
+
+---
+
+`./scripts/local/setup-mongodb-dodai-console.rb`
+
+---
+
+## Almost done...
+
+- `sbt run`
+- `http://localhost:9000/healthcheck`
+- `http://localhost:9000/dbhealthcheck`
+- Postman
 
 ---
 
 ## Source
 [Dodai Doc](https://github.com/access-company/Dodai-doc)
 [Dodai Internal Doc](https://github.com/access-company/Dodai/tree/master/internal-doc)
+
+^ Google Translate is your friend
