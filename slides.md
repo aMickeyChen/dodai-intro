@@ -1,7 +1,7 @@
 footer: Mickey Chen @ Access Taiwan
 slidenumbers: true
 build-lists: true
-theme: Simple, 5
+theme: Merriweather, 8
 
 # Diving in to 土台 (Dodai)
 
@@ -18,7 +18,7 @@ worked with dynamic types languages
 
 ---
 
-## Dodai == 土台 == 地基
+## Dodai -> 土台 -> 地基
 
 ![inline center](images/torterra.jpg)
 
@@ -60,6 +60,8 @@ worked with dynamic types languages
 
 ---
 
+[.build-lists:false]
+
 ### 2 Ways of Accessing Data
 
 1. Through a Server (ie. Antikythera)
@@ -90,7 +92,7 @@ Model -> Describes the Entities, encode & decode
 
 ---
 
-[.slide-transition: false]
+[.build-lists:false]
 
 ### Data Modeling, pt. 1
 
@@ -100,7 +102,7 @@ Model -> Describes the Entities, encode & decode
 
 ---
 
-[.slide-transition: false]
+[.build-lists:false]
 
 ### Data Modeling, pt. 2
 
@@ -114,7 +116,7 @@ Model -> Describes the Entities, encode & decode
 
 ---
 
-[.slide-transition: false]
+[.build-lists:false]
 
 ### Data Modeling, pt. 3
 
@@ -134,13 +136,18 @@ ScheduledHttpNotificationWorker
 
 ---
 
+[.build-lists:false]
+
 ## Access Control
 
-- Section-based Authorization
+- Section-based Authorization (Path-based Authorization)
 
 ![fit inline](images/AccessControl_1.png)
 
 ![right fit](images/AccessControl_2.png)
+
+^
+Kinda like REST
 
 ---
 
@@ -162,7 +169,7 @@ ask for input from more experience team member for input
 
 ### APIs
 
-- 2 Sets
+- 2 Categories
   - Admin (`/admin`)
   - Application (`/v1`)
 - `:appId` + `:groupId`
@@ -171,6 +178,8 @@ ask for input from more experience team member for input
 ^ per App credentials
 
 ---
+
+[.build-lists:false]
 
 ### Client Libraries
 
@@ -181,7 +190,9 @@ ask for input from more experience team member for input
 
 ---
 
-#### they are...
+[.build-lists:false]
+
+#### working on client libs...
 
 - Script Generated
 - `apidata.json`
@@ -209,12 +220,14 @@ suprise! - Stripe
 
 ---
 
+[.build-lists:false]
+
 ## Then you will need Scala env
 
 - Java Runtime ([AWS Corretto 8](https://docs.aws.amazon.com/corretto/latest/corretto-8-ug/macos-install.html))
 - 2.13.0
 - install sbt (1.2.8)
-- sbt build
+- `sbt build`
 - [Play! framework](https://www.playframework.com/)
 
 ^
@@ -255,8 +268,20 @@ few chapters get you a long way
 
 ---
 
-## Source
+# Thank You!
+### (Please let me know I missed anything)
+
+---
+
+### Special Thanks
+
+# Cola-son
+
+---
+
+### Sources
 [Dodai Doc](https://github.com/access-company/Dodai-doc)
 [Dodai Internal Doc](https://github.com/access-company/Dodai/tree/master/internal-doc)
 
 ^ Google Translate is your friend
+
